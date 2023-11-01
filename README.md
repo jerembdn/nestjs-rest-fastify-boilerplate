@@ -17,7 +17,7 @@
     <img src="https://img.shields.io/badge/MADE%20BY%20ONRUNTIME-fff.svg?style=for-the-badge&labelColor=000">
   </a>
   <img alt="" src="https://img.shields.io/codacy/grade/5a05d48ed9484dcdbf9c58d2ddd988b9?style=for-the-badge&labelColor=000000">
-  <a aria-label="License" href="https://github.com/tonightpass/nestjs-mailjet/blob/master/LICENSE" target="_blank">
+  <a aria-label="License" href="https://github.com/jerembdn/nestjs-rest-fastify-boilerplate/blob/master/LICENSE" target="_blank">
     <img alt="" src="https://img.shields.io/npm/l/next.svg?style=for-the-badge&labelColor=000000">
   </a>
 </p>
