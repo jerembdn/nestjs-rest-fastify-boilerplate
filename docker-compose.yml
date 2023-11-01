@@ -32,7 +32,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME:
       MONGO_INITDB_ROOT_PASSWORD:
-      MONGO_INITDB_DATABASE: tonightpass
+      MONGO_INITDB_DATABASE: database_name
     ports:
       - 27017:27017
     networks:
