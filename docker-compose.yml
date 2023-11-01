@@ -1,0 +1,45 @@
+version: '3.7'
+
+services:
+  server:
+    image: nestjs-app
+    container_name: nestjs-app
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: development
+    restart: unless-stopped
+    env_file:
+      - .env
+      - .env.development.local
+    environment:
+      MONGODB_SERVER_URI: mongodb:27017
+    ports:
+      - 8000:8000
+    networks:
+      - mongo-compose-network
+    depends_on:
+      - database
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run start:dev
+
+  database:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME:
+      MONGO_INITDB_ROOT_PASSWORD:
+      MONGO_INITDB_DATABASE: tonightpass
+    ports:
+      - 27017:27017
+    networks:
+      - mongo-compose-network
+    volumes:
+      - ./database:/usr/src/app/data/db
+
+networks:
+  mongo-compose-network:
+    driver: bridge
